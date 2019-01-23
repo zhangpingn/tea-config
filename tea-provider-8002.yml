@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: tea-provider-8002
+  profiles:
+    active: dev
+server:
+  port: 8002
+---
+spring:
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7003/eureka
+  instance:
+    instance-id: teacher-provider-8002
+    prefer-ip-address: true
+info:
+  name: stu-provider
+  version: 1.0.0
+---
+spring:
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka,http://localhost:7003/eureka
+  instance:
+    instance-id: teacher-provider-8002
+    prefer-ip-address: true
+info:
+  name: teacher-provider-8002
+  version: 1.0.0
