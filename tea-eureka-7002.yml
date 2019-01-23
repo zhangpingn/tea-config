@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: tea-eureka
+  profiles:
+    active: dev
+server:
+  port: 7002
+---
+spring:
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+---
+spring:
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7003/eureka
