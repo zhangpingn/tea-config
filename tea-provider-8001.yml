@@ -1,6 +1,6 @@
 spring:
   application:
-    name: tea-provider-8001
+    name: tea-provider
   profiles:
     active: dev
 server:
